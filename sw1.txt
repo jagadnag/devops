@@ -1,4 +1,9 @@
 hostname sw1
-int lo0
+int lo1
  ip address 1.1.1.1 255.255.255.255
+int lo2
+ ip address 2.2.2.2 255.255.255.255
+
+no ip domain-lookup
+username cisco priviege 15 password cisco
 
