@@ -1,0 +1,13 @@
+no service pad
+!
+hostname R1
+!
+interface loopback 0
+description Loopback 0
+ip address 1.1.1.1 255.255.255.255
+!
+enable secret cisco123
+!
+logging buffered 32000
+no logging console
+

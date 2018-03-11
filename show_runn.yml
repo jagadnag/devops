@@ -1,0 +1,16 @@
+---
+- hosts: Router
+  gather_facts: false
+  connection: local
+
+  tasks:
+    - name: Backup_running_config
+      ios_command:
+        commands:
+          - show running-config
+      register: config
+      
+    - name: Save output to /etc/ansible/backup 
+      copy: 
+        content: "{{ config.stdout[0] }}"
+        dest: "/etc/ansible/backup/show_run_{{inventory_hostname}}.txt"       
