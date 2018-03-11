@@ -1,0 +1,12 @@
+---
+- hosts: nxos1
+  gather_facts: false
+  connection: local
+
+  tasks:
+  - name: Configure Loopback Lo0
+    nxos_config:
+      lines:
+        - description "Configured by Ansible"
+        - ip address 1.1.1.1/32
+      parents: interface loopback0
